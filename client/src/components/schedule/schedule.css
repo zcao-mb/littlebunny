@@ -1,0 +1,6 @@
+
+.roster-board {
+    position: relative;
+    height: calc(100vh - 86px);
+    background-color: bisque
+}
