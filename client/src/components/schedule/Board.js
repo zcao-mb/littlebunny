@@ -1,9 +1,9 @@
 import React from 'react';
 import { BoardHeader } from './BoardHeader';
-import { BoardBody } from './BoardBody';
+import BoardBody from './BoardBody';
 import { BoardFooter } from './BoardFooter';
 
-import './schedule.css';
+import './board.css';
 
 export class Board extends React.Component {
 

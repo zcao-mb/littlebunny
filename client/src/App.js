@@ -3,9 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 
 import { Layout } from './components/shared';
 import Home from './components/Home';
-
 import { Schedule } from './components/schedule';
-import Test from './components/Test';
+import Test from './components/StoreTest';
+
 
 class App extends Component {
   render() {
@@ -13,8 +13,8 @@ class App extends Component {
       <Layout>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/schedule" component={Schedule} />
-          <Route exact path="/test" component={Test} />
+          <Route path="/schedule" component={Schedule} />
+          <Route path="/test" component={Test} />
         </Switch>
       </Layout>
     );

@@ -8,7 +8,7 @@ export function handleResponse(response) {
             if (contentType && contentType.includes("application/json")) {
                 response.json().then(json => resolve(json));
             } else {
-                resolve();
+                response.text().then(text => resolve(text));
             }
         } else {
             if(response.status === 404) {

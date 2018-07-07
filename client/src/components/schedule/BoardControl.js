@@ -3,6 +3,10 @@ import React from 'react';
 export class BoardControl extends React.Component {
 
     render() {
-        return <div>Board Control</div>
+        return (
+            <div className="board-control">
+                Board Control
+            </div>
+        );
     }
 }
