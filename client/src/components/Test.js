@@ -1,5 +1,5 @@
 import React from 'react';
-import { testServices } from '../services/test.service';
+import { testServices } from '../services/testService';
 
 export default class Test extends React.Component {
 

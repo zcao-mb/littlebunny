@@ -6,10 +6,6 @@ import NavLink from './NavLink';
 
 export default class Layout extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="app">

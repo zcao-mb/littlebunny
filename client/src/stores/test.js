@@ -1,5 +1,5 @@
 
-import { testServices } from '../services/test.service';
+import { testServices } from '../services/testService';
 
 const GET_VALUES = 'GET_VALUES';
 

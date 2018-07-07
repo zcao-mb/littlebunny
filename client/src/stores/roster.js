@@ -1,4 +1,4 @@
-import { rosterService } from '../services/roster.service';
+import { rosterService } from '../services/rosterService';
 
 const GET_EMPLOYEE = 'GET_EMPLOYEE';
 

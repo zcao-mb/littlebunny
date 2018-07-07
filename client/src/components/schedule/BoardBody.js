@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 
-import { actionCreators } from '../../store/roster';
+import { actionCreators } from '../../stores/roster';
 import { EmployeeShift } from './EmployeeShift';
 
 class BoardBody extends React.Component {
@@ -13,11 +13,8 @@ class BoardBody extends React.Component {
     }
 
     render() {
-
-        console.log(this.props.employees);
-
         if(!_.isArray(this.props.employees))
-            return <div>Loading...</div>;
+            return null;
 
         return (
             <div className="board-body">
