@@ -1,20 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 
-import { actionCreators } from '../../stores/roster';
+
 import { EmployeeShift } from './EmployeeShift';
 
 class BoardBody extends React.Component {
 
-    componentDidMount() {
-        this.props.getEmployees();
-    }
-
     render() {
-        if(!_.isArray(this.props.employees))
-            return null;
+        if(!_.isArray(this.props.employees)) return null;
 
         return (
             <div className="board-body">
@@ -26,9 +20,11 @@ class BoardBody extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({ employees: state.roster.employees});
+const mapStateToProps = state => ({ 
+    employees: state.roster.employees,
+    days: state.roster.days
+});
 
 export default connect(
-    mapStateToProps,
-    dispatch => bindActionCreators(actionCreators, dispatch)
+    mapStateToProps
 )(BoardBody);

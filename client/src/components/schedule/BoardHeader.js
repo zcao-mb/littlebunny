@@ -1,21 +1,31 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import _ from 'lodash';
+import moment from 'moment';
 
-export class BoardHeader extends React.Component {
+class BoardHeader extends React.Component {
 
     render() {
+
+        if(!_.isArray(this.props.days)) return null;
+
         return (
             <div className="board-header">
                 <div className="roster-employee pull-left">Employee</div>
                 <div className="day-wrapper">
-                    <div className="day pull-left">Day 1</div>
-                    <div className="day pull-left">Day 2</div>
-                    <div className="day pull-left">Day 3</div>
-                    <div className="day pull-left">Day 4</div>
-                    <div className="day pull-left">Day 5</div>
-                    <div className="day pull-left">Day 6</div>
-                    <div className="day pull-left">Day 7</div>
+                    {this.props.days.map(day =>
+                        <div key={day.serialNo} className="day pull-left">{ moment(day.date).format('ddd D MMM')}</div>
+                    )}
                 </div>
             </div>
         );
     }
 }
+
+const mapStateToProps = state => ({ 
+    days: state.roster.days
+});
+
+export default connect(
+    mapStateToProps
+)(BoardHeader);
