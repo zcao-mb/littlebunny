@@ -16,9 +16,13 @@ class Board extends React.Component {
         this.props.getEmployees().then(function() {
             console.log('employees loaded.');
         });
-        this.props.searchDays('2018-7-1', '2018-7-7').then(function() {
+        this.props.searchWeeklyDays('2018-7-1').then(function() {
             console.log('days loaded.');
         });
+
+        this.props.searchWeeklyShifts('2018-7-1').then(function(){
+            console.log('shfits loaded.');
+        })
     }
 
     render() {

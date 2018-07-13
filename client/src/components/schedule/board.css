@@ -43,7 +43,6 @@
 .day-wrapper {
     margin-left: 200px;
     width: calc(100% - 200px);
-    background-color: rgb(240, 209, 109);
     position: relative;
 }
 
@@ -55,12 +54,28 @@
     position: relative;
 }
 
+.day .add-button {
+    height: 20px; 
+    width: 24px; 
+    position: absolute; 
+    bottom: 10px; 
+    right: 2px;
+    border: 1px solid rgb(68, 138, 218);
+    text-align: center;
+    cursor: pointer;
+}
+
+.day .shift {
+    font-size: 10px;
+}
+
 .board-header .roster-employee {
     height: 30px;
 }
 
 .board-header .day-wrapper {
     height: 30px;
+    background-color: rgb(112, 161, 180);
 }
 
 .board-header .day {
@@ -86,6 +101,7 @@
 
 .board-body .day-wrapper {
     height: 78px;
+    background-color: rgb(240, 209, 109);
 }
 
 .board-body .day {

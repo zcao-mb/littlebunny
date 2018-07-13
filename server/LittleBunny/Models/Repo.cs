@@ -50,34 +50,34 @@ namespace LittleBunny.Models
         {
             var result = new List<Shift>();
 
-            var days = new List<DateTime>();
-            for (var day = startDate; day <= endDate; day = day.AddDays(1))
-                days.Add(day);
-
             result.Add(new Shift
             {
                 Id = 1,
                 EmployeeId = 101,
-                StartTime = days[1].AddHours(8),
-                EndTime = days[1].AddHours(12),
+                Date = startDate,
+                StartTime = new TimeSpan(9, 0, 0),
+                EndTime = new TimeSpan(14, 30, 0),
                 JobKey = "Kitchen"
             });
+
 
             result.Add(new Shift
             {
                 Id = 2,
-                EmployeeId = 102,
-                StartTime = days[3].AddHours(9),
-                EndTime = days[3].AddHours(15),
+                EmployeeId = 101,
+                Date = startDate,
+                StartTime = new TimeSpan(11, 30, 0),
+                EndTime = new TimeSpan(16, 00, 0),
                 JobKey = "Clean"
             });
 
             result.Add(new Shift
             {
                 Id = 3,
-                EmployeeId = 105,
-                StartTime = days[0].AddHours(14),
-                EndTime = days[0].AddHours(18),
+                EmployeeId = 102,
+                Date = endDate,
+                StartTime = new TimeSpan(11, 0, 0),
+                EndTime = new TimeSpan(15, 30, 0),
                 JobKey = "Kitchen"
             });
 

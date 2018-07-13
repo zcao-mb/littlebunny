@@ -31,7 +31,7 @@ namespace LittleBunny.Controllers
         }
 
         [HttpPost("shifts")]
-        public async Task<ActionResult<IEnumerable<Shift>>> SearchShifts( [FromBody] SearchShiftsRequest request)
+        public async Task<ActionResult<IEnumerable<Shift>>> SearchShifts([FromBody] SearchShiftsRequest request)
         {
             await Task.Delay(2000);
 
