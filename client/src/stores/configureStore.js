@@ -2,12 +2,14 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { valueReducer } from './test';
 import { rosterReducer } from './roster';
+import rosterUiReducer from './rosterUi';
 
 export default function configureStore(initialState = {}) {
 
     const reducers = combineReducers({
         values: valueReducer,
-        roster: rosterReducer
+        roster: rosterReducer,
+        rosterUi: rosterUiReducer
     });
 
     const middleware = [

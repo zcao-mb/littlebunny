@@ -1,6 +1,9 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { actionCreators as rosterUiActionCreators } from '../../stores/rosterUi.editShift';
 
-export class EmployeeShift extends React.Component {
+class EmployeeShift extends React.Component {
 
     render() {
         var employee = this.props.employee;
@@ -19,11 +22,20 @@ export class EmployeeShift extends React.Component {
                         </div>
                     )}
                 </div>
+                
             </div>
         );
     }
 
     addShift = (emp, date) => {
         console.log('add shift to:', emp, date);
+        this.props.editShift(emp, date);
     }
 }
+
+const mapStateToProps = state => state;
+
+export default connect(
+    mapStateToProps,
+    dispatch => bindActionCreators(rosterUiActionCreators, dispatch)
+)(EmployeeShift);

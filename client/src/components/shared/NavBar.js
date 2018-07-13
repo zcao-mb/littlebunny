@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import { Link } from 'react-router-dom';
 
 const styles = {
@@ -23,7 +22,7 @@ const styles = {
   },
 };
 
-function ButtonAppBar(props) {
+function NavBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
@@ -43,8 +42,8 @@ function ButtonAppBar(props) {
   );
 }
 
-ButtonAppBar.propTypes = {
+NavBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ButtonAppBar);
+export default withStyles(styles)(NavBar);
