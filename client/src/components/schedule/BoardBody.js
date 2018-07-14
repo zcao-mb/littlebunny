@@ -52,9 +52,9 @@ class BoardBody extends React.Component {
 }
 
 const mapStateToProps = state => ({ 
-    employees: state.roster.employees,
-    days: state.roster.days,
-    shifts: state.roster.shifts,
+    employees: state.schedule.view.data.employees,
+    days: state.schedule.view.data.days,
+    shifts: state.schedule.view.data.shifts,
     editShiftState: state.rosterUi.editShift
 });
 

@@ -7,7 +7,23 @@ namespace LittleBunny.Models
 {
     public class Repo
     {
-        public IEnumerable<Employee> SearchEmployees()
+        public Schedule FetchSchedule(string site, DateTime startDate, DateTime endDate)
+        {
+            var result = new Schedule()
+            {
+                Site = site,
+                StartDate = startDate,
+                EndDate = endDate
+            };
+
+            result.Employees = SearchEmployees();
+            result.Days = SearchDays(startDate, endDate);
+            result.Shifts = SearchShifts(startDate, endDate);
+
+            return result;
+        }
+
+        private IEnumerable<Employee> SearchEmployees()
         {
             return new List<Employee>()
             {
@@ -26,7 +42,7 @@ namespace LittleBunny.Models
             };
         }
 
-        public IEnumerable<RosterDay> SearchDays(DateTime startDate, DateTime endDate)
+        private IEnumerable<RosterDay> SearchDays(DateTime startDate, DateTime endDate)
         {
             var result = new List<RosterDay>();
             int serial = 1;
@@ -46,7 +62,7 @@ namespace LittleBunny.Models
             return result;
         }
 
-        public IEnumerable<Shift> SearchShifts(DateTime startDate, DateTime endDate)
+        private IEnumerable<Shift> SearchShifts(DateTime startDate, DateTime endDate)
         {
             var result = new List<Shift>();
 
@@ -64,7 +80,7 @@ namespace LittleBunny.Models
             result.Add(new Shift
             {
                 Id = 2,
-                EmployeeId = 101,
+                EmployeeId = 102,
                 Date = startDate,
                 StartTime = new TimeSpan(11, 30, 0),
                 EndTime = new TimeSpan(16, 00, 0),

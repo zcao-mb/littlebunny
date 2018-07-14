@@ -1,6 +1,6 @@
 import React from 'react';
 import Board from './Board';
-import { BoardControl } from './BoardControl';
+import BoardControl from './BoardControl';
 
 export class Schedule extends React.Component {
     render() {

@@ -23,7 +23,7 @@ class BoardHeader extends React.Component {
 }
 
 const mapStateToProps = state => ({ 
-    days: state.roster.days
+    days: state.schedule.view.data.days
 });
 
 export default connect(
