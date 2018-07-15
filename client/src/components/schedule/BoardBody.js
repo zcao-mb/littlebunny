@@ -1,12 +1,9 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
-import { actionCreators as rosterUiActionCreators } from '../../stores/rosterUi.editShift';
-
 import EmployeeShift from './EmployeeShift';
-import EditShiftDialog from './EditShiftDialog';
+
 
 class BoardBody extends React.Component {
 
@@ -22,7 +19,7 @@ class BoardBody extends React.Component {
                 {employees.map(employee =>
                     <EmployeeShift key={employee.id} employee={employee} />
                 )}
-                <EditShiftDialog open={this.props.editShiftState.status==='editing'} handleClose={(e) => this.closeShiftDialog(e) } />
+                
             </div>
         );
     }
@@ -43,22 +40,14 @@ class BoardBody extends React.Component {
 
         return employee;
     }
-
-    
-    closeShiftDialog = (e) => {
-        console.log('edit shift dialog is closing: ', e);
-        this.props.saveShift();
-    }
 }
 
 const mapStateToProps = state => ({ 
     employees: state.schedule.view.data.employees,
     days: state.schedule.view.data.days,
-    shifts: state.schedule.view.data.shifts,
-    editShiftState: state.rosterUi.editShift
+    shifts: state.schedule.view.data.shifts
 });
 
 export default connect(
-    mapStateToProps,
-    dispatch => bindActionCreators(rosterUiActionCreators, dispatch)
+    mapStateToProps
 )(BoardBody);
